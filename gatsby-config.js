@@ -7,7 +7,7 @@ module.exports = {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/gatsby-config.js
-    siteTitle: `SCV Consultants Blog`,
+    siteTitle: `SCV Consultants`,
     siteTitleAlt: `SCV Consultants Blog - Quality Assurance, DevFX and Software Craftmanship`,
     siteHeadline: `SCV Consultants Blog - Quality Assurance, DevFX and Software Craftmanship`,
     siteUrl: `https://scvconsultants.gtsb.io/`,
@@ -38,7 +38,7 @@ module.exports = {
           },
           {
             name: `Homepage`,
-            url: `https://https://scvconsultants.gtsb.io`,
+            url: `https://scvconsultants.gtsb.io`,
           },
         ],
       },
