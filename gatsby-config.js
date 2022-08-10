@@ -38,8 +38,8 @@ module.exports = {
             url: `https://twitter.com/MDobrzycki`,
           },
           {
-            name: `Homepage`,
-            url: `https://scvconsultants.gtsb.io`,
+            name: `LinkedIn`,
+            url: `https://www.linkedin.com/in/dobrzycki`,
           },
         ],
       },
