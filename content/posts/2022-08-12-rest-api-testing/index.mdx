@@ -7,6 +7,53 @@ slug: "/rest-api-testing-tools-review"
 ### Introduction and theory
 
 #### What is REST Api and how does it differ from GraphQL
+Roy Fielding defined REST as architectural style for distributed hypermedia systems. It's described [here](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm) if you want to dive in.
+For this blog post consider REST as set of contraints that tells you how to create API.
+
+What's an API?
+It's an interface (a strict set of rules) that will allow you to communicate and use existing code in different applications (it might be even the same app).
+
+What's in that case REST API?
+It's an API that is compliant with REST rules.
+
+Which protocol does REST uses?
+Mostly HTTP.
+
+What's GraphQL?
+All the answers in REST will return you whole resource. For example if you want to get user info you'll get something like:
+
+```json
+{
+    'name': 'John',
+    'surname': 'Kowalsky',
+    'email': 'j.kowalsky@penguins-from-madagascar.com',
+    'age': '5'
+}
+```
+
+And that goes on and on. Think about resources that will have 50 fields (yeah, it happens sometimes).
+
+GraphQL solves that, instead of asking for the whole resource, you can ask just for email, or age and email. Then you'll get only the fields that you are interested in:
+```json
+{
+    'email': 'j.kowalsky@penguins-from-madagascar.com',
+    'age': '5'
+}
+```
+This saves time, traffic and resources that you have to pay for the servers.
+More info about GraphQL [here](https://graphql.org/)
+
+#### What are REST rules
+
+1. Client-server architecture
+
+2. Stateless
+
+3. Layers
+
+4. Cache
+
+5. Uniform Interface
 
 #### What is HTTP Protocol
 
