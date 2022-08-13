@@ -56,6 +56,16 @@ More info about GraphQL [here](https://graphql.org/)
 5. Uniform Interface
 
 #### What is HTTP Protocol
+Full RFC for HTTP Protocol is [here](https://www.ietf.org/rfc/rfc2616.txt), try to get familiar with it on the fly.
+
+
+| HTTP Request | CRUD   | Resource Collection      | Single resource |
+| ------------ | -------| ------------------------ |---------------: |
+| POST         | Create | 201 (Created)            | 404 (Not Found) |
+| GET          | Read   | 200 (Ok)                 | 200 (Ok)        |
+| PUT          | Update | 405 (Method Not Allowed) | 200 (Ok)        |
+| PATCH        | Update | 405 (Method Not Allowed) | 200 (Ok)        |
+| DELETE       | Delete | 405 (Method Not Allowed) | 200 (Ok)        |
 
 ### Actual Testing tools
 
