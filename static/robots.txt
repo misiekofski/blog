@@ -1,3 +1,3 @@
 User-agent: *
 
-sitemap: https://scvconsultants.gtsb.io/sitemap-index.xml
+sitemap: https://scvconsultants.com/sitemap-index.xml

@@ -11,7 +11,7 @@ module.exports = {
     siteTitle: `SCV Consultants`,
     siteTitleAlt: `SCV Consultants Blog - Quality Assurance, DevFX and Software Craftmanship`,
     siteHeadline: `SCV Consultants Blog - Quality Assurance, DevFX and Software Craftmanship`,
-    siteUrl: `https://scvconsultants.gtsb.io/`,
+    siteUrl: `https://scvconsultants.com/`,
     siteDescription: `SCV Consultants Blog - Quality Assurance, DevFX and Software Craftmanship`,
     siteLanguage: `en`,
     siteImage: `/banner.jpg`,

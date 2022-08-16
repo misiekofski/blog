@@ -46,18 +46,23 @@ More info about GraphQL [here](https://graphql.org/)
 #### What are REST rules (in shortcut)
 
 1. Client-server architecture
+
 Client does not know anything about server besides endpoints and payloads that he needs to send.
 
 2. Stateless
+
 No sessions, no remembering what was sent in previous requests. Only JWT Tokens (or something similar) that needs to be sent with every request.
 
 3. Layers
+
 We know only about next layer (if it's more than one, we only know about the next one we need to communicate with)
 
 4. Cache
+
 Try to cache images on the client side. Don't DDOS yourself.
 
 5. Uniform Interface
+
 Pick one (I suggest JSON) and stay with it. And create unique URI for separate resources.
 
 #### What is HTTP Protocol
@@ -98,14 +103,20 @@ Cons:
 Postman CLI that runs on the top of npm. Nice extensible tool that will generate reports that your CI/CD tool understands.
 
 #### VS Code + Rest Client
+![Rest Client VS Code extension](./rest-client.png)
 
-#### Rest Sharp
+#### Rest Sharp / Rest Assured
+If you want to work with libraries to test REST API programatically, for C# use Rest Sharp, for Java Rest Assured.
+They have the most support from the community and are mature solutions.
 
 ### Framework example
 
 #### GraphQL testing framework
 
+I haven't found GraphQL testing framework yet, but it's so similar to REST that RestAssured/RestSharp with some additional helper classes is sufficient.
 I've created simple GraphQL testing framework in this [repo](https://github.com/misiekofski/graphql-testing-framework)
+
+The main functionality is to create a proper query builder. Reverse engineering from Postman told me to solve it this way.
 
 ```java
 public class GraphqlParser {
