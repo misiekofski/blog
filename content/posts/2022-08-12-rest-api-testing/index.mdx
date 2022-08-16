@@ -43,21 +43,26 @@ GraphQL solves that, instead of asking for the whole resource, you can ask just 
 This saves time, traffic and resources that you have to pay for the servers.
 More info about GraphQL [here](https://graphql.org/)
 
-#### What are REST rules
+#### What are REST rules (in shortcut)
 
 1. Client-server architecture
+Client does not know anything about server besides endpoints and payloads that he needs to send.
 
 2. Stateless
+No sessions, no remembering what was sent in previous requests. Only JWT Tokens (or something similar) that needs to be sent with every request.
 
 3. Layers
+We know only about next layer (if it's more than one, we only know about the next one we need to communicate with)
 
 4. Cache
+Try to cache images on the client side. Don't DDOS yourself.
 
 5. Uniform Interface
+Pick one (I suggest JSON) and stay with it. And create unique URI for separate resources.
 
 #### What is HTTP Protocol
 Full RFC for HTTP Protocol is [here](https://www.ietf.org/rfc/rfc2616.txt), try to get familiar with it on the fly.
-
+REST API should be compliant with HTTP codes below (GraphQL might on the other side sent you response: 200 OK and error in json payload)
 
 | HTTP Request | CRUD   | Resource Collection      | Single resource |
 | ------------ | -------| ------------------------ |---------------: |
@@ -70,8 +75,27 @@ Full RFC for HTTP Protocol is [here](https://www.ietf.org/rfc/rfc2616.txt), try 
 ### Actual Testing tools
 
 #### Postman
+The oldest and most used now tool
+
+Pros:
+- (mostly) free for normal usage, paid features include team support
+- low learning curve
+- you can automate tests with a bit knowledge of JavaScript
+- you can mock API responses
+- support multiple environments
+- built in runner and reporting
+- works on all OS
+- built in Open API support
+- exports stuff that can be run with newman in CI
+
+Cons:
+- does not support other languages than JS
+- no support for js syntax
+- a bit hard to evolve into full testing framework (that will check database), this require a lot of javascript knowledge
+- hard to keep the tests under version control (reviewing them is nightmare)
 
 #### Newman (+npm)
+Postman CLI that runs on the top of npm. Nice extensible tool that will generate reports that your CI/CD tool understands.
 
 #### VS Code + Rest Client
 
