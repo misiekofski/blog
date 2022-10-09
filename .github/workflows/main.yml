@@ -15,4 +15,5 @@ jobs:
       - uses: enriikke/gatsby-gh-pages-action@v2
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}
+          mailchimp-endpoint: ${{ secrets.MAILCHIMP_ENDPOINT }}
           deploy-branch: gh-pages
