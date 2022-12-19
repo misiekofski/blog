@@ -46,8 +46,8 @@ module.exports = {
         ],
         externalLinks: [
           {
-            name: `Twitter`,
-            url: `https://twitter.com/MDobrzycki`,
+            name: `Mastodon`,
+            url: `https://cloud-native.social/@misiekofski`,
           },
           {
             name: `LinkedIn`,
