@@ -10,23 +10,45 @@ tags:
 ---
 
 ### Intro
-One of the most notable new features in Selenium 4.7 is the introduction of the "Relative Locator" feature. This feature allows developers to locate elements on a web page relative to other elements, rather than using absolute xpath or css selectors. This makes it easier to locate elements that may have dynamic ids or classes.
-
-Another new feature in Selenium 4.7 is the "WebDriver Playback" feature. This feature allows developers to record and playback interactions with a web page, making it easier to create and maintain automated tests.
+Summary:
+- you don't need to download anymore drivers (Selenium Manager)
+- there is extended support to interact with browser-based debugging tools
+- currently supported CDP versions: 85, 106, 107, 108
+- support for JDK Http client
 
 Full [changelog](https://github.com/SeleniumHQ/selenium/blob/trunk/java/CHANGELOG)
 
+This post is about code examples and what can be done with newest Selenium version.
+
 ### Selenium Manager
-Selenium Manager is a new tool that simplifies the process of setting up and configuring Selenium for use with web browsers. One of the most notable features of Selenium Manager is the ability to automatically download and configure the appropriate web driver for the browser being used.
 Selenium Manager is a CLI (Command-Line Interface) tool developed in Rust to allow cross platform execution.
+
 Before Selenium Manager, developers had to manually download and configure the web driver for the browser being used. This can be a time-consuming and error-prone process, especially for less experienced developers. With Selenium Manager, developers can now simply select the browser they want to use, and the tool will automatically download and configure the appropriate web driver.
 
 tl;dr - you only need to add Selenium version 4.7 and have installed chrome locally. No driver management anymore.
 
 ### WebDriver BiDi
-WebDriver-BiDi is a protocol that allows the communication between WebDriver clients and servers to occur in both directions. It is an extension to the WebDriver protocol and it enables bi-directional communication between a client and a server. This means that the client can send commands to the server and the server can send back results and notifications to the client.
+BiDi (Bidirectional WebDriver) is a protocol extension for the WebDriver standard that provides support for bidirectional (BiDi) communication between the WebDriver client and the browser. It allows the browser to send commands to the WebDriver client, in addition to the client sending commands to the browser. This allows for more interactive and dynamic automation, as well as better support for browser-based debugging tools.
 
-### And now the code for basic auth
+The protocol extension is based on the WebSocket protocol and it allows for sending and receiving messages in a bidirectional way. The protocol defines a set of commands and events that can be sent between the client and browser. The commands are used to initiate actions on the browser, and the events are used to notify the client of state changes in the browser.
+
+One of the key features of BiDi is the ability to interact with browser-based debugging tools, such as the browser's JavaScript console or the browser's DevTools. This allows for more advanced automation and debugging capabilities.
+
+
+### Test case #1
+The test case does the following:
+
+1. Initializes a new instance of the ChromeDriver class, which is the WebDriver implementation for the Chrome browser.
+2. Declares variables for the URL of the website to be accessed, the username and password for the basic HTTP authentication.
+3. Defines a Predicate object that checks whether the URI of the website to be accessed matches a specific pattern (in this case, the hostname must contain "authenticationtest.com").
+4. Register the predicate object and the username and password to the Driver.
+5. Navigates to the website using the driver.get(url) method.
+6. Finds an HTML element on the webpage using the CSS selector "h1" and extracts the text of the element.
+7. Prints the text of the element to the console.
+8. Asserts that the text of the element is equal to the string "Login Success".
+9. The test case is checking that the website returns the correct header text after successful login. If the header text is not "Login Success", the assertion will fail and the test case will be marked as failed.
+
+#### Code for test case #1
 ```java
   @Test
   void basicAuthTest() {
@@ -46,7 +68,19 @@ WebDriver-BiDi is a protocol that allows the communication between WebDriver cli
   }
 ```
 
-### Here's BiDi to listen for browser console:
+### Test case #2
+The test case does the following:
+
+1. Initializes a new instance of the ChromeDriver class, which is the WebDriver implementation for the Chrome browser.
+2. Retrieves the DevTools instance of the browser by calling ((HasDevTools) driver).getDevTools() which allows to interact with the browser's developer tools.
+3. Creates a new DevTools session by calling devTools.createSession().
+4. Enables logging by calling devTools.send(Log.enable()).
+5. Registers an event listener on the DevTools instance to listen for log entries added.
+6. When a new log entry is added, the listener sets the lastLogEntry variable to the text of the log entry and prints the text of the log entry and log level of the log entry to the console.
+7. Navigates to the website using the driver.get("https://github.com/") method.
+8. Asserts that the lastLogEntry contains the string "A preload for".
+
+#### Code for test case #2
 ```java
   @Test
   void consoleLogTest() {
@@ -57,10 +91,123 @@ WebDriver-BiDi is a protocol that allows the communication between WebDriver cli
 
       devTools.addListener(Log.entryAdded(),
               logEntry -> {
+                  setLastLogEntry(logEntry.getText());
                   System.out.println("log: "+logEntry.getText());
                   System.out.println("level: "+logEntry.getLevel());
               });
 
       driver.get("https://github.com/");
+      assertThat(lastLogEntry).contains("A preload for");
   }
 ```
+
+### Test case #3
+The test case does the following:
+
+1. Initializes a new instance of the ChromeDriver class, which is the WebDriver implementation for the Chrome browser.
+2. Retrieves the DevTools instance of the browser by calling ((HasDevTools) driver).getDevTools() which allows to interact with the browser's developer tools.
+3. Creates a new DevTools session by calling devTools.createSession().
+4. Overrides the browser's geolocation by calling devTools.send(Emulation.setGeolocationOverride(Optional.of(52.5043), Optional.of(13.4501), Optional.of(1))); to set the geolocation to the latitude and longitude of Berlin, Germany.
+5. Navigates to the website using the driver.get("https://my-location.org/") method.
+6. Finds an HTML element on the webpage using the id "address" and extracts the text of the element.
+7. Asserts that the text of the element contains the string "Berlin, Germany".
+
+#### Code for test case #3
+```java
+  @Test
+  void mockGeolocation() {
+      WebDriver driver = new ChromeDriver();
+      DevTools devTools = ((HasDevTools) driver).getDevTools();
+      devTools.createSession();
+
+      devTools.send(Emulation.setGeolocationOverride(Optional.of(52.5043),
+              Optional.of(13.4501),
+              Optional.of(1)));
+      driver.get("https://my-location.org/");
+      WebElement yourLocation = driver.findElement(By.id("address"));
+      assertThat(yourLocation.getText()).contains("Berlin, Germany");
+  }
+```
+
+
+### Test case #4
+The test case does the following:
+
+1. Initializes a new instance of the ChromeDriver class, which is the WebDriver implementation for the Chrome browser.
+2. Retrieves the DevTools instance of the browser by calling ((HasDevTools) driver).getDevTools() which allows to interact with the browser's developer tools.
+3. Creates a new DevTools session by calling devTools.createSession().
+4. Creates a new NetworkInterceptor object, this interceptor will block all request to youtube.com
+5. Navigates to the website using the driver.get("https://www.youtube.com/") method.
+6. Retrieves the page source of the current webpage and assigns it to the variable source.
+7. Asserts that the page source contains the string "It's blocked"
+
+#### Code for test case #4
+```java
+  @Test
+  void mockNetworkTest() {
+      WebDriver driver = new ChromeDriver();
+      DevTools devTools = ((HasDevTools) driver).getDevTools();
+      devTools.createSession();
+
+      try (NetworkInterceptor ignored = new NetworkInterceptor(
+              driver,
+              Route.matching(req -> req.getUri().contains("youtube"))
+                      .to(() -> req -> new HttpResponse()
+                              .setStatus(200)
+                              .addHeader("Content-Type", MediaType.HTML_UTF_8.toString())
+                              .setContent(utf8String("It's blocked"))))) {
+
+          driver.get("https://www.youtube.com/");
+
+          String source = driver.getPageSource();
+          Assertions.assertTrue(source.contains("It's blocked"));
+      }
+  }
+```
+
+
+### Test case #5
+The test case does the following:
+
+1. Initializes a new instance of the ChromeDriver class, which is the WebDriver implementation for the Chrome browser.
+2. Retrieves the DevTools instance of the browser by calling ((HasDevTools) driver).getDevTools() which allows to interact with the browser's developer tools.
+3. Creates a new DevTools session by calling devTools.createSession().
+4. Initializes an empty ArrayList of type JavascriptException
+5. Registers an event listener on the DevTools instance to listen for JavaScript exceptions and adds the exceptions to the list
+6. Register a CompletableFuture to hold a JavaScript exception, this future will complete when an exception is thrown
+7. Navigates to the website using the driver.get("https://the-internet.herokuapp.com/add_remove_elements/") method.
+8. Finds an HTML element on the webpage using the tagName "button"
+9. Add an onclick event to throw an Error message
+10. Executes a click on the button
+11. Waits for the JavaScript exception to be thrown (with a timeout of 5 seconds)
+12. Asserts that the list of JavaScript exceptions has a size of 1.
+
+#### Code for test case #5
+```java
+    @Test
+    void jsExceptionsTest() throws ExecutionException, InterruptedException, TimeoutException {
+        WebDriver driver = new ChromeDriver();
+        DevTools devTools = ((HasDevTools) driver).getDevTools();
+        devTools.createSession();
+
+        List<JavascriptException> jsExceptionsList = new ArrayList<>();
+        devTools.getDomains().events().addJavascriptExceptionListener(jsExceptionsList::add);
+        CompletableFuture<JavascriptException> futureJsExc = new CompletableFuture<>();
+        devTools.getDomains().events().addJavascriptExceptionListener(futureJsExc::complete);
+
+        driver.get("https://the-internet.herokuapp.com/add_remove_elements/");
+
+        WebElement element = driver.findElement(By.tagName("button"));
+
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);",
+                        element, "onclick", "throw new Error('Hello, world!')");
+        element.click();
+
+        futureJsExc.get(5, TimeUnit.SECONDS);
+        assertThat(jsExceptionsList).hasSize(1);
+    }
+```
+
+### Full code
+Full repository with working Java Code is [here](https://github.com/misiekofski/Selenium47).
