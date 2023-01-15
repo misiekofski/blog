@@ -28,22 +28,39 @@ WebDriver-BiDi is a protocol that allows the communication between WebDriver cli
 
 ### And now the code for basic auth
 ```java
-    @Test
-    void basicAuthTest() {
-        WebDriver driver = new ChromeDriver();
+  @Test
+  void basicAuthTest() {
+      WebDriver driver = new ChromeDriver();
 
-        var url = "https://authenticationtest.com/HTTPAuth/";
-        var username = "user";
-        var password = "pass";
+      var url = "https://authenticationtest.com/HTTPAuth/";
+      var username = "user";
+      var password = "pass";
 
-        Predicate<URI> uriPredicate = uri -> uri.getHost().contains("authenticationtest.com");
-        ((HasAuthentication) driver).register(uriPredicate, UsernameAndPassword.of(username, password));
-        driver.get(url);
+      Predicate<URI> uriPredicate = uri -> uri.getHost().contains("authenticationtest.com");
+      ((HasAuthentication) driver).register(uriPredicate, UsernameAndPassword.of(username, password));
+      driver.get(url);
 
-        WebElement headerText = driver.findElement(By.cssSelector("h1"));
-        System.out.println(headerText.getText());
-        assertThat(headerText.getText()).isEqualTo("Login Success");
-    }
+      WebElement headerText = driver.findElement(By.cssSelector("h1"));
+      System.out.println(headerText.getText());
+      assertThat(headerText.getText()).isEqualTo("Login Success");
+  }
 ```
 
-### Here's 
+### Here's BiDi to listen for browser console:
+```java
+  @Test
+  void consoleLogTest() {
+      WebDriver driver = new ChromeDriver();
+      DevTools devTools = ((HasDevTools) driver).getDevTools();
+      devTools.createSession();
+      devTools.send(Log.enable());
+
+      devTools.addListener(Log.entryAdded(),
+              logEntry -> {
+                  System.out.println("log: "+logEntry.getText());
+                  System.out.println("level: "+logEntry.getLevel());
+              });
+
+      driver.get("https://github.com/");
+  }
+```
