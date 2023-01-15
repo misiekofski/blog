@@ -1,0 +1,49 @@
+---
+title: "Selenium 4.7"
+date: 2023-01-12
+slug: "/selenium-4.7-how-can-we-write-framework"
+tags:
+  - Test automation
+  - Java
+  - Selenium
+  - Testing framework
+---
+
+### Intro
+One of the most notable new features in Selenium 4.7 is the introduction of the "Relative Locator" feature. This feature allows developers to locate elements on a web page relative to other elements, rather than using absolute xpath or css selectors. This makes it easier to locate elements that may have dynamic ids or classes.
+
+Another new feature in Selenium 4.7 is the "WebDriver Playback" feature. This feature allows developers to record and playback interactions with a web page, making it easier to create and maintain automated tests.
+
+Full [changelog](https://github.com/SeleniumHQ/selenium/blob/trunk/java/CHANGELOG)
+
+### Selenium Manager
+Selenium Manager is a new tool that simplifies the process of setting up and configuring Selenium for use with web browsers. One of the most notable features of Selenium Manager is the ability to automatically download and configure the appropriate web driver for the browser being used.
+Selenium Manager is a CLI (Command-Line Interface) tool developed in Rust to allow cross platform execution.
+Before Selenium Manager, developers had to manually download and configure the web driver for the browser being used. This can be a time-consuming and error-prone process, especially for less experienced developers. With Selenium Manager, developers can now simply select the browser they want to use, and the tool will automatically download and configure the appropriate web driver.
+
+tl;dr - you only need to add Selenium version 4.7 and have installed chrome locally. No driver management anymore.
+
+### WebDriver BiDi
+WebDriver-BiDi is a protocol that allows the communication between WebDriver clients and servers to occur in both directions. It is an extension to the WebDriver protocol and it enables bi-directional communication between a client and a server. This means that the client can send commands to the server and the server can send back results and notifications to the client.
+
+### And now the code for basic auth
+```java
+    @Test
+    void basicAuthTest() {
+        WebDriver driver = new ChromeDriver();
+
+        var url = "https://authenticationtest.com/HTTPAuth/";
+        var username = "user";
+        var password = "pass";
+
+        Predicate<URI> uriPredicate = uri -> uri.getHost().contains("authenticationtest.com");
+        ((HasAuthentication) driver).register(uriPredicate, UsernameAndPassword.of(username, password));
+        driver.get(url);
+
+        WebElement headerText = driver.findElement(By.cssSelector("h1"));
+        System.out.println(headerText.getText());
+        assertThat(headerText.getText()).isEqualTo("Login Success");
+    }
+```
+
+### Here's 
