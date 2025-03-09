@@ -7,14 +7,14 @@
   "license": "0BSD",
   "starter-name": "gatsby-starter-minimal-blog",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "npx gatsby build",
+    "develop": "npx gatsby develop",
     "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
     "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public -r https://git:${access-token}@github.com/${GITHUB_REPOSITORY}.git"
+    "start": "npx gatsby develop",
+    "serve": "npx gatsby serve",
+    "clean": "npx gatsby clean",
+    "deploy": "npx gatsby build && gh-pages -d public -r https://git:${access-token}@github.com/${GITHUB_REPOSITORY}.git"
   },
   "dependencies": {
     "@lekoarts/gatsby-theme-minimal-blog": "^6.2.4",
