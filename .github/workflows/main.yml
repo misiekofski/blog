@@ -11,10 +11,10 @@ jobs:
     env:
       PREFIX_PATHS: true
     steps:
-      - uses: actions/checkout@v2
-      - uses: enriikke/gatsby-gh-pages-action@v2
-        env:
-          MAILCHIMP_ENDPOINT: ${{ secrets.MAILCHIMP_ENDPOINT }}      
+      - uses: actions/checkout@v3
+      - uses: enriikke/gatsby-gh-pages-action@v2    
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+          access-token: x-access-token:${{ secrets.GITHUB_TOKEN }}
+          git-config-name: GithubActionsBot
+          git-config-email: deploybot@scvconsultants.com
           deploy-branch: gh-pages
