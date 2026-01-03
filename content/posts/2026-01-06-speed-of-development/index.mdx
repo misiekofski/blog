@@ -1,0 +1,153 @@
+---
+title: "Speed of development"
+date: 2026-01-06
+description: "Shipping faster is great, but speed without control just moves bugs to production quicker."
+tags:
+  - Engineering
+  - Delivery
+  - Quality
+  - AI
+---
+
+# The pressure: ship faster
+
+I’ve heard multiple times (in multiple companies) that we need to ship faster.
+
+It usually comes packaged as:
+
+- improve our **TTM (Time to Market)**
+- improve **TTV (Time to Value)**
+- and of course… “let’s break silos”
+
+I’m not against any of these goals. They’re valid. The problem is what we often optimize first.
+
+## The default “solution”: write code faster
+
+The typical response is:
+
+- speed up development (as in: how fast developers write code)
+- automate tests and make pipelines stable
+
+This is fine. It’s also the easiest thing to measure and the easiest thing to fund.
+
+But it’s rarely the biggest lever.
+
+## A simple math check: where is the time actually spent?
+
+If pure “coding time” is 10% of your end-to-end TTM, then even doubling development speed gives you ~5% improvement overall.
+
+That might be a win.
+
+But is it the win that fixes the real problem? Usually not.
+
+What often happens instead:
+
+- we produce more change faster
+- the system becomes harder to understand
+- quality starts to slip
+- the org burns time on coordination, rework, incidents, and “why did we build this?”
+
+## Speed is nothing without control
+
+The AI era makes this tension sharper.
+
+AI will help generate a lot of code. But generated code can be:
+
+- subtly wrong
+- untested
+- inconsistent with the architecture
+- hard to maintain
+
+So if we want speed, we need *control*. Not control as in bureaucracy — control as in feedback loops, clarity, and quality gates that actually work.
+
+## The real levers live across the whole SDLC
+
+If you want to improve TTM/TTV meaningfully, look at the full SDLC:
+
+- idea → decision
+- decision → design
+- design → implementation
+- implementation → verification
+- verification → release
+- release → adoption → value
+
+In many teams, the biggest delays are not in writing code.
+
+They’re in:
+
+- unclear priorities
+- late feedback
+- dependencies between teams
+- rework caused by wrong assumptions
+- “done” that isn’t actually usable
+
+## What’s important (and harder)
+
+### 1) A good roadmap and a clear vision
+
+Speed without direction is just motion.
+
+If the roadmap changes every week, or if the vision isn’t clear, then faster development just means faster thrashing.
+
+### 2) Everyone understands the business
+
+This is the part we often skip.
+
+If engineers (and product, and QA, and design) don’t understand:
+
+- how the company makes money
+- what generates revenue
+- what reduces cost or risk
+
+then “ship faster” becomes a generic mantra, not a strategy.
+
+### 3) Align tech with business
+
+Alignment is not a slide deck. It’s a daily habit:
+
+- choosing what *not* to build
+- reducing accidental complexity
+- making tradeoffs explicit
+- paying for quality where it protects revenue
+
+### 4) Make sure it works as expected
+
+Quality isn’t the enemy of speed.
+
+Quality is what prevents speed from turning into rework.
+
+This is where automation matters:
+
+- reliable CI pipelines
+- tests that catch meaningful regressions
+- fast feedback (locally and in CI)
+- stable environments
+- good observability in production
+
+## Using AI properly is now part of engineering quality
+
+If AI accelerates code creation, then the bottleneck shifts to:
+
+- review
+- verification
+- integration
+- maintenance
+
+Using AI tools properly means:
+
+- having clear standards (architecture, testing, security)
+- reviewing for correctness, not just style
+- treating “it compiles” as a starting point
+- building guardrails so mistakes are cheap to catch
+
+## Closing thoughts
+
+Yes, we should make development faster.
+
+But if you want better TTM/TTV, focus on the whole system:
+
+- direction (vision + roadmap)
+- alignment (business + tech)
+- control (quality + feedback loops)
+
+Otherwise you’ll just ship faster… to the wrong place.
