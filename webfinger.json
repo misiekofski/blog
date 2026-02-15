@@ -1,0 +1,23 @@
+{
+    "subject": "acct:misiekofski@cloud-native.social",
+    "aliases": [
+        "https://cloud-native.social/@misiekofski",
+        "https://cloud-native.social/users/misiekofski"
+    ],
+    "links": [
+        {
+            "rel": "http://webfinger.net/rel/profile-page",
+            "type": "text/html",
+            "href": "https://cloud-native.social/@misiekofski"
+        },
+        {
+            "rel": "self",
+            "type": "application/activity+json",
+            "href": "https://cloud-native.social/users/misiekofski"
+        },
+        {
+            "rel": "http://ostatus.org/schema/1.0/subscribe",
+            "template": "https://cloud-native.social/authorize_interaction?uri={uri}"
+        }
+    ]
+}
