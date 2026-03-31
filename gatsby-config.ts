@@ -33,10 +33,6 @@ const config: GatsbyConfig = {
               slug: `/trainings`,
             },
             {
-              title: `Consulting`,
-              slug: `/consulting`,
-            },
-            {
               title: `Free Workshops`,
               slug: `/free-workshops`,
             },

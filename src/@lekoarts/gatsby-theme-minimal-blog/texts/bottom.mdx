@@ -1,18 +1,70 @@
 <div sx={{ mt: 4, mb: 3 }}>
 
-## Ready to Improve Your Development Effectiveness?
-
+## Stay in the Loop
 
 <div sx={{ mb: 2, fontSize: 1 }}>
-**Get practical insights delivered to your inbox** — no ads, no spam, just quality content about testing, DevOps, and development best practices.
+**Get new posts delivered to your inbox** — no ads, no spam, just quality content about testing, DevOps, and software engineering.
 </div>
 
-**Or start with a conversation:**
-- 📅 [Free 30-min consultation](/consulting)
-- 💼 [Connect on LinkedIn](https://www.linkedin.com/in/dobrzycki/)
+<style>{`
+  .bd-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .bd-form label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+  }
+  .bd-form input[type="email"] {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    background: rgba(255,255,255,0.08);
+    color: inherit;
+    flex-grow: 1;
+    min-width: 220px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .bd-form input[type="email"]::placeholder {
+    color: rgba(255,255,255,0.4);
+  }
+  .bd-form input[type="email"]:focus {
+    border-color: var(--theme-ui-colors-primary, #5B9DD9);
+  }
+  .bd-form input[type="submit"] {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.6rem 1.5rem;
+    background: var(--theme-ui-colors-primary, #5B9DD9);
+    color: var(--theme-ui-colors-background, #1A202C);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .bd-form input[type="submit"]:hover {
+    opacity: 0.85;
+  }
+`}</style>
 
-<div sx={{ fontSize: 0, mt: 2, fontStyle: 'italic' }}>
-*Helping teams deliver better software faster through proven quality engineering practices.*
-</div>
+<form
+  action="https://buttondown.com/api/emails/embed-subscribe/dobrzycki"
+  method="post"
+  class="embeddable-buttondown-form bd-form"
+>
+  <label for="bd-email">Enter your email</label>
+  <input type="email" name="email" id="bd-email" placeholder="your@email.com" required />
+  <input type="submit" value="Subscribe" />
+</form>
 
 </div>
