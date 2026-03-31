@@ -9,10 +9,10 @@ const config: GatsbyConfig = {
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/gatsby-config.mjs
     siteTitle: `SCV Consultants`,
-    siteTitleAlt: `SCV Consultants Blog - Quality Assurance, DevFX and Software Craftmanship`,
-    siteHeadline: `SCV Consultants Blog - Quality Assurance, DevFX and Software Craftmanship`,
+    siteTitleAlt: `SCV Consultants  - Engineering Leadership, AI, DevOps, Quality & Security`,
+    siteHeadline: `SCV Consultants  - Bridging DevOps, SRE, QA and Development Teams`,
     siteUrl: `https://scvconsultants.com/`,
-    siteDescription: `SCV Consultants Blog - Quality Assurance, DevFX and Software Craftmanship`,
+    siteDescription: `Michał Dobrzycki  - Engineering leader and consultant helping companies build, skill up, and integrate software teams across AI, DevOps, testing, and development.`,
     siteLanguage: `en`,
     siteImage: `/banner.jpg`,
     author: `@MDobrzycki`,
@@ -58,9 +58,9 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `SCV Consultants`,
+        short_name: `SCV Consultants`,
+        description: `Engineering leadership, AI adoption, DevOps, testing strategy, and development best practices  - by Michał Dobrzycki.`,
         start_url: `/`,
         background_color: `#fff`,
         // This will impact how browsers show your PWA/website
@@ -127,7 +127,7 @@ const config: GatsbyConfig = {
   }
 }`,
             output: `rss.xml`,
-            title: `Minimal Blog - @lekoarts/gatsby-theme-minimal-blog`,
+            title: `SCV Consultants  - Blog`,
           },
         ],
       },

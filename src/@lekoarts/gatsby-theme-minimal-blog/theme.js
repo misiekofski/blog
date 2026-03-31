@@ -49,27 +49,27 @@ const theme = merge(tailwind, {
       lineHeight: "heading",
       fontWeight: 700,
       color: "heading",
-      mb: 3,
-      mt: 4,
+      mb: 2,
+      mt: 3,
     },
     h2: {
       fontSize: [3, 4, 5],
       lineHeight: "heading",
       fontWeight: 600,
       color: "heading",
-      mb: 3,
-      mt: 4,
+      mb: 2,
+      mt: 3,
     },
     h3: {
       fontSize: [2, 3, 4],
       lineHeight: "heading",
       fontWeight: 600,
       color: "heading",
-      mb: 2,
-      mt: 3,
+      mb: 1,
+      mt: 2,
     },
     p: {
-      mb: 3,
+      mb: 2,
       lineHeight: "body",
     },
     a: {
@@ -81,13 +81,13 @@ const theme = merge(tailwind, {
       },
     },
     ul: {
-      mb: 3,
+      mb: 2,
     },
     ol: {
-      mb: 3,
+      mb: 2,
     },
     li: {
-      mb: 2,
+      mb: 1,
     },
     strong: {
       color: "heading",
@@ -95,7 +95,7 @@ const theme = merge(tailwind, {
     },
     hr: {
       borderColor: "divide",
-      my: 4,
+      my: 3,
     },
   },
 })
