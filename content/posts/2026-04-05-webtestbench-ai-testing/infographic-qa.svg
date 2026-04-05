@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#f87171"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#4ade80"/>
+    </linearGradient>
+    <linearGradient id="yellowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="1100" fill="url(#bgGrad)" rx="16"/>
+
+  <!-- Title -->
+  <text x="450" y="55" text-anchor="middle" fill="#f8fafc" font-size="26" font-weight="700">WebTestBench - What QA Engineers Need to Know</text>
+  <text x="450" y="82" text-anchor="middle" fill="#94a3b8" font-size="14">Can AI agents replace human testers? The benchmark says: not yet.</text>
+  <line x1="100" y1="100" x2="800" y2="100" stroke="url(#blueGrad)" stroke-width="2"/>
+
+  <!-- Section 1: Best Model F1 Scores - Horizontal Bars -->
+  <text x="60" y="140" fill="#60a5fa" font-size="18" font-weight="700">End-to-End F1 Scores (Best Models)</text>
+
+  <!-- GPT-5.1 -->
+  <text x="60" y="175" fill="#e2e8f0" font-size="13" font-weight="600">GPT-5.1</text>
+  <rect x="200" y="162" width="264" height="20" fill="url(#blueGrad)" rx="4" opacity="0.9"/>
+  <text x="470" y="177" fill="#94a3b8" font-size="13">26.4% F1 | R:33.3% P:25.8%</text>
+
+  <!-- MiMo-V2-Flash -->
+  <text x="60" y="205" fill="#e2e8f0" font-size="13" font-weight="600">MiMo-V2-Flash</text>
+  <rect x="200" y="192" width="251" height="20" fill="url(#blueGrad)" rx="4" opacity="0.75"/>
+  <text x="457" y="207" fill="#94a3b8" font-size="13">25.1% F1 | R:24.6% P:34.8%</text>
+
+  <!-- Claude Sonnet 4.5 -->
+  <text x="60" y="235" fill="#e2e8f0" font-size="13" font-weight="600">Claude Sonnet 4.5</text>
+  <rect x="200" y="222" width="219" height="20" fill="url(#blueGrad)" rx="4" opacity="0.6"/>
+  <text x="425" y="237" fill="#94a3b8" font-size="13">21.9% F1 | R:19.7% P:32.1%</text>
+
+  <!-- Claude Opus 4.5 -->
+  <text x="60" y="265" fill="#e2e8f0" font-size="13" font-weight="600">Claude Opus 4.5</text>
+  <rect x="200" y="252" width="202" height="20" fill="url(#blueGrad)" rx="4" opacity="0.5"/>
+  <text x="408" y="267" fill="#94a3b8" font-size="13">20.2% F1 | R:16.5% P:33.0%</text>
+
+  <!-- 30% threshold line -->
+  <line x1="500" y1="155" x2="500" y2="280" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="505" y="285" fill="#ef4444" font-size="11">No model breaks 30%</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="310" x2="840" y2="310" stroke="#334155" stroke-width="1"/>
+
+  <!-- Section 2: The Three Bottlenecks -->
+  <text x="60" y="345" fill="#60a5fa" font-size="18" font-weight="700">Three Core Bottlenecks</text>
+
+  <!-- Bottleneck 1 -->
+  <rect x="60" y="365" width="250" height="160" fill="#1e293b" stroke="#334155" rx="10"/>
+  <text x="185" y="395" text-anchor="middle" fill="#f87171" font-size="32">&#x1F4CB;</text>
+  <text x="185" y="420" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="700">Incomplete Checklists</text>
+  <text x="185" y="442" text-anchor="middle" fill="#94a3b8" font-size="12">Coverage stays below 70%</text>
+  <text x="185" y="462" text-anchor="middle" fill="#94a3b8" font-size="12">Models miss implicit rules</text>
+  <text x="185" y="482" text-anchor="middle" fill="#94a3b8" font-size="12">Latent constraints ignored</text>
+  <text x="185" y="510" text-anchor="middle" fill="#ef4444" font-size="13" font-weight="600">1/3 of test cases omitted</text>
+
+  <!-- Bottleneck 2 -->
+  <rect x="325" y="365" width="250" height="160" fill="#1e293b" stroke="#334155" rx="10"/>
+  <text x="450" y="395" text-anchor="middle" fill="#fbbf24" font-size="32">&#x1F50D;</text>
+  <text x="450" y="420" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="700">Unreliable Detection</text>
+  <text x="450" y="442" text-anchor="middle" fill="#94a3b8" font-size="12">~30% precision (high FP rate)</text>
+  <text x="450" y="462" text-anchor="middle" fill="#94a3b8" font-size="12">&lt;25% recall (misses real bugs)</text>
+  <text x="450" y="482" text-anchor="middle" fill="#94a3b8" font-size="12">Default-correctness bias</text>
+  <text x="450" y="510" text-anchor="middle" fill="#eab308" font-size="13" font-weight="600">Models assume "Pass" by default</text>
+
+  <!-- Bottleneck 3 -->
+  <rect x="590" y="365" width="250" height="160" fill="#1e293b" stroke="#334155" rx="10"/>
+  <text x="715" y="395" text-anchor="middle" fill="#60a5fa" font-size="32">&#x23F3;</text>
+  <text x="715" y="420" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="700">Long-Horizon Failure</text>
+  <text x="715" y="442" text-anchor="middle" fill="#94a3b8" font-size="12">30-60 interaction turns/app</text>
+  <text x="715" y="462" text-anchor="middle" fill="#94a3b8" font-size="12">0.87M-7.26M tokens/app</text>
+  <text x="715" y="482" text-anchor="middle" fill="#94a3b8" font-size="12">Context tracking degrades</text>
+  <text x="715" y="510" text-anchor="middle" fill="#3b82f6" font-size="13" font-weight="600">Cascading errors over time</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="545" x2="840" y2="545" stroke="#334155" stroke-width="1"/>
+
+  <!-- Section 3: Oracle Experiment -->
+  <text x="60" y="580" fill="#60a5fa" font-size="18" font-weight="700">Oracle Experiment: Human Checklist + AI Detection</text>
+  <text x="60" y="600" fill="#94a3b8" font-size="13">When agents are told exactly what to test, performance roughly doubles</text>
+
+  <!-- Before/After bars -->
+  <text x="60" y="635" fill="#e2e8f0" font-size="13" font-weight="600">Claude Sonnet 4.5</text>
+  <rect x="220" y="622" width="110" height="18" fill="#334155" rx="3"/>
+  <text x="340" y="636" fill="#94a3b8" font-size="12">21.9%</text>
+  <text x="370" y="636" fill="#64748b" font-size="14">→</text>
+  <rect x="395" y="622" width="246" height="18" fill="url(#greenGrad)" rx="3" opacity="0.8"/>
+  <text x="650" y="636" fill="#22c55e" font-size="12" font-weight="600">49.2% F1 (+125%)</text>
+
+  <text x="60" y="665" fill="#e2e8f0" font-size="13" font-weight="600">GPT-5.1</text>
+  <rect x="220" y="652" width="132" height="18" fill="#334155" rx="3"/>
+  <text x="362" y="666" fill="#94a3b8" font-size="12">26.4%</text>
+  <text x="392" y="666" fill="#64748b" font-size="14">→</text>
+  <rect x="417" y="652" width="234" height="18" fill="url(#greenGrad)" rx="3" opacity="0.8"/>
+  <text x="660" y="666" fill="#22c55e" font-size="12" font-weight="600">46.8% F1 (+77%)</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="695" x2="840" y2="695" stroke="#334155" stroke-width="1"/>
+
+  <!-- Section 4: Quality Dimensions -->
+  <text x="60" y="730" fill="#60a5fa" font-size="18" font-weight="700">What Breaks Where: Testing Dimensions</text>
+
+  <!-- Functionality -->
+  <rect x="60" y="750" width="190" height="90" fill="#1e293b" stroke="#22c55e" stroke-width="1.5" rx="8"/>
+  <text x="155" y="775" text-anchor="middle" fill="#22c55e" font-size="14" font-weight="700">Functionality</text>
+  <text x="155" y="795" text-anchor="middle" fill="#94a3b8" font-size="12">Highest coverage</text>
+  <text x="155" y="815" text-anchor="middle" fill="#94a3b8" font-size="12">Explicit requirements</text>
+  <text x="155" y="832" text-anchor="middle" fill="#22c55e" font-size="11">Easiest for AI</text>
+
+  <!-- Constraint -->
+  <rect x="265" y="750" width="190" height="90" fill="#1e293b" stroke="#eab308" stroke-width="1.5" rx="8"/>
+  <text x="360" y="775" text-anchor="middle" fill="#eab308" font-size="14" font-weight="700">Constraint</text>
+  <text x="360" y="795" text-anchor="middle" fill="#94a3b8" font-size="12">Lower coverage</text>
+  <text x="360" y="815" text-anchor="middle" fill="#94a3b8" font-size="12">Clear signals when found</text>
+  <text x="360" y="832" text-anchor="middle" fill="#eab308" font-size="11">Hard to identify, easy to verify</text>
+
+  <!-- Interaction -->
+  <rect x="470" y="750" width="190" height="90" fill="#1e293b" stroke="#f97316" stroke-width="1.5" rx="8"/>
+  <text x="565" y="775" text-anchor="middle" fill="#f97316" font-size="14" font-weight="700">Interaction</text>
+  <text x="565" y="795" text-anchor="middle" fill="#94a3b8" font-size="12">UI feedback checks</text>
+  <text x="565" y="815" text-anchor="middle" fill="#94a3b8" font-size="12">Async state issues</text>
+  <text x="565" y="832" text-anchor="middle" fill="#f97316" font-size="11">High false-positive rate</text>
+
+  <!-- Content -->
+  <rect x="675" y="750" width="165" height="90" fill="#1e293b" stroke="#ef4444" stroke-width="1.5" rx="8"/>
+  <text x="757" y="775" text-anchor="middle" fill="#ef4444" font-size="14" font-weight="700">Content</text>
+  <text x="757" y="795" text-anchor="middle" fill="#94a3b8" font-size="12">Semantic alignment</text>
+  <text x="757" y="815" text-anchor="middle" fill="#94a3b8" font-size="12">Worst performance</text>
+  <text x="757" y="832" text-anchor="middle" fill="#ef4444" font-size="11">Hardest for AI</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="860" x2="840" y2="860" stroke="#334155" stroke-width="1"/>
+
+  <!-- Section 5: Actionable Takeaways -->
+  <text x="60" y="895" fill="#60a5fa" font-size="18" font-weight="700">Actionable Takeaways for QA Engineers</text>
+
+  <circle cx="80" cy="925" r="8" fill="#22c55e"/>
+  <text x="98" y="930" fill="#e2e8f0" font-size="13" font-weight="600">Human checklists + AI execution is the best current strategy</text>
+
+  <circle cx="80" cy="955" r="8" fill="#eab308"/>
+  <text x="98" y="960" fill="#e2e8f0" font-size="13" font-weight="600">Focus AI on functional testing first - it's where models perform best</text>
+
+  <circle cx="80" cy="985" r="8" fill="#ef4444"/>
+  <text x="98" y="990" fill="#e2e8f0" font-size="13" font-weight="600">Keep humans on constraint/content testing - AI misses implicit rules</text>
+
+  <circle cx="80" cy="1015" r="8" fill="#3b82f6"/>
+  <text x="98" y="1020" fill="#e2e8f0" font-size="13" font-weight="600">Use AI as a first-pass filter, not a replacement for manual QA</text>
+
+  <circle cx="80" cy="1045" r="8" fill="#a855f7"/>
+  <text x="98" y="1050" fill="#e2e8f0" font-size="13" font-weight="600">Monitor token costs - 0.87M to 7.26M tokens per app adds up fast</text>
+
+  <!-- Footer -->
+  <text x="450" y="1085" text-anchor="middle" fill="#475569" font-size="11">Source: WebTestBench (arXiv:2603.25226) | 10 models evaluated on 100 web apps | scvconsultants.com</text>
+</svg>

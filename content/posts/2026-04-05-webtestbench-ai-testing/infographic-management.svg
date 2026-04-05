@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 950" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <linearGradient id="blueG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <linearGradient id="redG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#f87171"/>
+    </linearGradient>
+    <linearGradient id="greenG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#4ade80"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="950" fill="url(#bgGrad2)" rx="16"/>
+
+  <!-- Title -->
+  <text x="450" y="50" text-anchor="middle" fill="#f8fafc" font-size="26" font-weight="700">AI-Powered Web Testing - Executive Summary</text>
+  <text x="450" y="77" text-anchor="middle" fill="#94a3b8" font-size="14">WebTestBench Benchmark | 10 AI Models | 100 Web Applications</text>
+  <line x1="100" y1="95" x2="800" y2="95" stroke="url(#blueG)" stroke-width="2"/>
+
+  <!-- The Big Number -->
+  <rect x="60" y="115" width="780" height="100" fill="#1e293b" stroke="#ef4444" stroke-width="2" rx="12"/>
+  <text x="450" y="158" text-anchor="middle" fill="#ef4444" font-size="54" font-weight="800">&lt; 30%</text>
+  <text x="450" y="185" text-anchor="middle" fill="#94a3b8" font-size="16">Maximum F1 score achieved by any AI model on end-to-end web testing</text>
+  <text x="450" y="205" text-anchor="middle" fill="#64748b" font-size="13">AI testing agents are not ready to replace human QA teams</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="235" x2="840" y2="235" stroke="#334155" stroke-width="1"/>
+
+  <!-- Section: The Business Case -->
+  <text x="60" y="270" fill="#60a5fa" font-size="18" font-weight="700">Why This Matters for Your Business</text>
+
+  <!-- Three columns -->
+  <!-- Vibe Coding -->
+  <rect x="60" y="290" width="250" height="130" fill="#1e293b" stroke="#334155" rx="10"/>
+  <text x="185" y="315" text-anchor="middle" fill="#60a5fa" font-size="16" font-weight="700">The Vibe Coding Wave</text>
+  <text x="185" y="340" text-anchor="middle" fill="#e2e8f0" font-size="12">Non-experts build web apps</text>
+  <text x="185" y="360" text-anchor="middle" fill="#e2e8f0" font-size="12">using AI code generation</text>
+  <text x="185" y="385" text-anchor="middle" fill="#94a3b8" font-size="12">They can build it but</text>
+  <text x="185" y="405" text-anchor="middle" fill="#eab308" font-size="13" font-weight="600">they can't verify it works</text>
+
+  <!-- The Gap -->
+  <rect x="325" y="290" width="250" height="130" fill="#1e293b" stroke="#334155" rx="10"/>
+  <text x="450" y="315" text-anchor="middle" fill="#ef4444" font-size="16" font-weight="700">The Testing Gap</text>
+  <text x="450" y="340" text-anchor="middle" fill="#e2e8f0" font-size="12">AI testers miss 70%+ of</text>
+  <text x="450" y="360" text-anchor="middle" fill="#e2e8f0" font-size="12">what needs to be tested</text>
+  <text x="450" y="385" text-anchor="middle" fill="#94a3b8" font-size="12">When they do test, they get</text>
+  <text x="450" y="405" text-anchor="middle" fill="#ef4444" font-size="13" font-weight="600">70% of judgments wrong</text>
+
+  <!-- Cost Reality -->
+  <rect x="590" y="290" width="250" height="130" fill="#1e293b" stroke="#334155" rx="10"/>
+  <text x="715" y="315" text-anchor="middle" fill="#eab308" font-size="16" font-weight="700">The Cost Reality</text>
+  <text x="715" y="340" text-anchor="middle" fill="#e2e8f0" font-size="12">0.87M - 7.26M tokens</text>
+  <text x="715" y="360" text-anchor="middle" fill="#e2e8f0" font-size="12">per web application tested</text>
+  <text x="715" y="385" text-anchor="middle" fill="#94a3b8" font-size="12">At current API pricing</text>
+  <text x="715" y="405" text-anchor="middle" fill="#eab308" font-size="13" font-weight="600">$2 - $50+ per app per test run</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="440" x2="840" y2="440" stroke="#334155" stroke-width="1"/>
+
+  <!-- Section: What AI Can and Can't Do -->
+  <text x="60" y="475" fill="#60a5fa" font-size="18" font-weight="700">Where AI Testing Works vs. Where It Fails</text>
+
+  <!-- Works -->
+  <rect x="60" y="495" width="380" height="175" fill="#0f2a1a" stroke="#22c55e" stroke-width="1.5" rx="10"/>
+  <text x="250" y="525" text-anchor="middle" fill="#22c55e" font-size="16" font-weight="700">AI Can Help With</text>
+
+  <text x="80" y="555" fill="#e2e8f0" font-size="13">&#x2705;  Executing predefined test plans</text>
+  <text x="80" y="580" fill="#e2e8f0" font-size="13">&#x2705;  Functional feature verification</text>
+  <text x="80" y="605" fill="#e2e8f0" font-size="13">&#x2705;  First-pass smoke testing</text>
+  <text x="80" y="630" fill="#e2e8f0" font-size="13">&#x2705;  Data management workflows</text>
+  <text x="80" y="655" fill="#94a3b8" font-size="12">With human checklist: ~50% defect detection</text>
+
+  <!-- Fails -->
+  <rect x="460" y="495" width="380" height="175" fill="#2a0f0f" stroke="#ef4444" stroke-width="1.5" rx="10"/>
+  <text x="650" y="525" text-anchor="middle" fill="#ef4444" font-size="16" font-weight="700">AI Still Fails At</text>
+
+  <text x="480" y="555" fill="#e2e8f0" font-size="13">&#x274C;  Identifying what to test (planning)</text>
+  <text x="480" y="580" fill="#e2e8f0" font-size="13">&#x274C;  Implicit business rule violations</text>
+  <text x="480" y="605" fill="#e2e8f0" font-size="13">&#x274C;  Content semantic correctness</text>
+  <text x="480" y="630" fill="#e2e8f0" font-size="13">&#x274C;  Complex multi-step user journeys</text>
+  <text x="480" y="655" fill="#94a3b8" font-size="12">Without human checklist: ~26% defect detection</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="690" x2="840" y2="690" stroke="#334155" stroke-width="1"/>
+
+  <!-- Section: Strategic Recommendations -->
+  <text x="60" y="725" fill="#60a5fa" font-size="18" font-weight="700">Strategic Recommendations</text>
+
+  <!-- Recommendation boxes -->
+  <rect x="60" y="745" width="375" height="80" fill="#1e293b" stroke="#22c55e" stroke-width="1.5" rx="8"/>
+  <text x="80" y="770" fill="#22c55e" font-size="14" font-weight="700">NOW: Hybrid Approach</text>
+  <text x="80" y="790" fill="#94a3b8" font-size="12">Human QA writes test plans, AI executes them.</text>
+  <text x="80" y="808" fill="#94a3b8" font-size="12">Best ROI with current technology.</text>
+
+  <rect x="460" y="745" width="380" height="80" fill="#1e293b" stroke="#eab308" stroke-width="1.5" rx="8"/>
+  <text x="480" y="770" fill="#eab308" font-size="14" font-weight="700">AVOID: Full AI Autonomy</text>
+  <text x="480" y="790" fill="#94a3b8" font-size="12">Fully autonomous AI testing is unreliable.</text>
+  <text x="480" y="808" fill="#94a3b8" font-size="12">70%+ of real defects go undetected.</text>
+
+  <rect x="60" y="840" width="375" height="80" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5" rx="8"/>
+  <text x="80" y="865" fill="#3b82f6" font-size="14" font-weight="700">INVEST: Test Plan Quality</text>
+  <text x="80" y="885" fill="#94a3b8" font-size="12">Structured test plans are the biggest lever.</text>
+  <text x="80" y="903" fill="#94a3b8" font-size="12">Good plans double AI detection accuracy.</text>
+
+  <rect x="460" y="840" width="380" height="80" fill="#1e293b" stroke="#a855f7" stroke-width="1.5" rx="8"/>
+  <text x="480" y="865" fill="#a855f7" font-size="14" font-weight="700">WATCH: Cost per Test Run</text>
+  <text x="480" y="885" fill="#94a3b8" font-size="12">Budget $2-$50+ per application per run.</text>
+  <text x="480" y="903" fill="#94a3b8" font-size="12">Prioritize critical paths over exhaustive testing.</text>
+
+  <!-- Footer -->
+  <text x="450" y="940" text-anchor="middle" fill="#475569" font-size="11">Source: WebTestBench (arXiv:2603.25226) | Kong et al., March 2026 | scvconsultants.com</text>
+</svg>
