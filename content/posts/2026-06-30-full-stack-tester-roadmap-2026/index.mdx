@@ -13,23 +13,72 @@ slug: "/full-stack-tester-roadmap-2026"
 
 Back in 2022 I drew [my own automation tester roadmap](/tester-roadmap-2022) because roadmap.sh still hadn't shipped theirs. Four years later the landscape has shifted enough that an update isn't enough — the role itself has changed.
 
-The term **Full Stack Tester** is becoming real. Companies want someone who can write a Playwright test, wire it into a GitHub Actions pipeline, spin up a container to run it, read the Grafana dashboard when something breaks, and — increasingly in 2026 — use AI tools to do all of the above faster.
+This is not "learn everything". It's a map of what the intersection of DevOps + QA + Quality Engineering looks like right now, with AI layered on top. It's also a response to a question I hear constantly from people in the industry: *what do I need to learn to stay relevant and find a job in 2026?*
 
-This is not "learn everything". It's a map of what the intersection of DevOps + QA + Quality Engineering looks like right now, with AI layered on top.
+---
+
+## The job market context
+
+Let's be honest about where we are. 2024 and 2025 were rough. Big tech went through rounds of layoffs that hit QA and testing roles harder than most — partly because companies realized their test automation was brittle and high-maintenance, partly because managers decided AI would fix that. Neither turned out to be true, but the headcount didn't come back.
+
+The result: **fewer open positions, higher expectations per role**. Companies that used to hire a manual tester, an automation engineer, and a DevOps person separately are now posting one job that expects all three. If you look at job boards right now, the "SDET" or "Quality Engineer" postings regularly ask for Selenium or Playwright *plus* CI/CD experience *plus* API testing *plus* some cloud knowledge. The bar moved up, the salary didn't always follow.
+
+For people actively looking for work, the market signal is clear: **breadth matters more than it did five years ago**. A tester who only does manual testing struggles to compete. A pure automation engineer who can't read a pipeline log or explain why a container failed isn't the full package anymore.
+
+---
+
+## What companies actually ask for
+
+I looked at job postings across Poland, Germany, the UK, and remote-friendly European companies. Here's what shows up consistently:
+
+**Still dominant in job requirements:**
+- **Selenium** — yes, still. Enterprise companies, banks, insurance, government — they have Selenium suites that are 5-10 years old and they're not rewriting them. Knowing Selenium is not "legacy" if you want to work in large organizations.
+- **Java** — the most requested language for test automation in enterprise job postings, by a significant margin.
+- **REST API testing** — Postman, RestAssured, or equivalent. This appears in virtually every SDET posting.
+- **CI/CD basics** — Jenkins still leads in enterprise, GitHub Actions in product companies and startups.
+
+**Growing fast in requirements:**
+- **Playwright** — strongest growth trend in product companies and startups. If you're targeting modern tech companies, Playwright is increasingly expected or preferred. But it has not displaced Selenium in overall volume.
+- **Python** — gaining ground, especially in data-heavy companies and AI teams.
+- **Docker** — now listed as a requirement, not a nice-to-have, in most mid-to-senior postings.
+- **AI tooling** — still vague in most postings ("experience with AI tools" without specifics), but the expectation is there.
+
+**Rare but increasingly differentiating:**
+- k6 / performance testing
+- Kubernetes
+- Security testing knowledge
+- Testing AI/LLM systems
+
+The honest summary: **Selenium + Java + API testing + CI/CD will get you into most interviews. Playwright + TypeScript + Docker + AI tooling will get you into the more interesting ones.**
 
 ---
 
 ## The five pillars
 
-**Foundation** — the stuff that underpins everything else. HTML, a programming language (TypeScript or Python, pick one and go deep), Git, HTTP, and Linux basics. Non-negotiable.
+**Foundation** — the stuff that underpins everything else. HTML, a programming language (pick one and go deep — Java if you want the broadest job market reach, TypeScript if you target modern product companies), Git, HTTP, and Linux basics. Non-negotiable.
 
-**Testing Craft** — the human side. Test strategy, exploratory testing, BDD, shift-left. Automation without craft is just expensive flakiness.
+**Testing Craft** — the human side. Test strategy, exploratory testing, BDD, shift-left. Automation without craft is just expensive flakiness. This is also the part AI cannot fully replace yet — someone has to decide *what* to test, not just execute it.
 
-**Automation Engineering** — Playwright has won E2E for now. But you also need API testing, unit testing, performance testing (k6), and a basic understanding of mobile. Visual and accessibility testing are no longer optional if you work on user-facing products.
+**Automation Engineering** — Selenium still dominates job postings, Playwright is growing fast — know both, or at minimum understand the concepts well enough to switch. API testing is as important as UI testing. Performance testing is undervalued and undersupplied, which makes it a good differentiator.
 
 **DevOps** — CI/CD pipelines, Docker, Kubernetes at least to the level of "I can read what broke". Cloud is table stakes. Monitoring and observability are where bugs actually hide.
 
 **AI Skills** — this is the new section. In 2026, not using AI tools means you're slower than someone who does. More importantly, someone has to *test AI systems*, and that's a skill set that barely existed two years ago.
+
+---
+
+## Testers do more now. That's not going to reverse.
+
+Five years ago a solid automation engineer wrote Selenium tests, maybe set up a Jenkins job, and called it done. Ten years ago you could build a career on manual testing alone.
+
+Neither of those career paths exists in the same form today. The scope expanded:
+
+- **You're expected to own quality end-to-end**, not just write tests. That means caring about monitoring, about production incidents, about what happens after deployment.
+- **You're expected to work with — not hand off to — DevOps**. Understanding pipelines, containers, and infrastructure isn't DevOps work anymore, it's table stakes for a senior tester.
+- **You're expected to do more with AI**, whether that means writing tests faster with Copilot or actually testing AI-powered features.
+- **You're expected to be a quality advocate**, not a gate at the end. That means talking to product, talking to developers, and being involved early.
+
+This is more work. The compensation hasn't always caught up. But the market is also clearer than it was: if you have the full stack of skills, you're genuinely hard to find, and companies know it.
 
 ---
 
@@ -168,8 +217,8 @@ The [WebTestBench benchmark](/webtestbench-ai-testing) shows AI agents still top
 
   <rect x="355" y="506" width="290" height="82" fill="#1e293b" stroke="#f59e0b" strokeWidth="2" rx="8"/>
   <text x="500" y="529" textAnchor="middle" fill="#f59e0b" fontSize="13" fontWeight="700">E2E Testing</text>
-  <text x="500" y="548" textAnchor="middle" fill="#94a3b8" fontSize="11">Playwright (primary), Cypress</text>
-  <text x="500" y="565" textAnchor="middle" fill="#94a3b8" fontSize="11">Selenium (legacy systems)</text>
+  <text x="500" y="548" textAnchor="middle" fill="#94a3b8" fontSize="11">Selenium (enterprise), Playwright (product)</text>
+  <text x="500" y="565" textAnchor="middle" fill="#94a3b8" fontSize="11">Cypress — know at least one well</text>
   <text x="500" y="582" textAnchor="middle" fill="#94a3b8" fontSize="11">Page Object Model, fixtures</text>
 
   <rect x="355" y="600" width="290" height="68" fill="#1e293b" stroke="#3b82f6" strokeWidth="1.5" rx="8"/>
@@ -351,13 +400,14 @@ The 2022 map was "an automation tester who knows some DevOps". The 2026 map is s
 
 The biggest additions:
 
-- **Playwright** replaced Selenium as the default E2E tool
-- **k6** is the go-to for performance (Gatling still valid for JVM shops)
-- **OpenTelemetry** is the observability standard now
+- **Playwright** is growing fast and preferred in product companies — but Selenium still dominates overall job market volume, especially enterprise. Know both if you can.
+- **k6** is the go-to for performance in modern stacks (Gatling still valid for JVM shops, JMeter in enterprise)
+- **OpenTelemetry** is the observability standard now — logs, metrics, and traces in one framework
 - **AI skills** — both for tooling and for testing AI-powered systems
 - **Contract testing** went from "interesting idea" to "required in microservices"
 - **Accessibility** moved from optional to "your lawyers will ask about this"
+- **Docker** moved from "nice to have" to a hard requirement in most senior postings
 
 What I dropped from 2022: React/Angular (not a tester's job unless you're in a tiny team), SysAdmin (K8s replaced most of that), WinAppDriver (niche).
 
-The core hasn't changed: write good tests, automate the boring parts, break things before users do. The tools just got better — and more numerous.
+The core hasn't changed: write good tests, automate the boring parts, break things before users do. The expectations around what "the boring parts" includes have just expanded significantly.
